@@ -12,6 +12,8 @@ void main() {
       app.main();
       await tester.pumpAndSettle(const Duration(seconds: 5));
 
+      expect(find.text('No Albums added yet'), findsOneWidget);
+
       expect(find.byIcon(Icons.search), findsOneWidget);
 
       // Finds the Search button to tap on.
@@ -115,14 +117,6 @@ void main() {
 
       await tester.pumpAndSettle(const Duration(seconds: 20));
       expect(find.text('No Albums added yet'), findsOneWidget);
-
-      //tearDown(app.main);
-
-      //  tearDown(()
-      //  async {
-      //   var driver =
-      //   await driver.close();
-      // });
     });
   });
 }
