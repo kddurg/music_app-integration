@@ -40,12 +40,13 @@ void main() {
 
       await tester.pumpAndSettle(const Duration(seconds: 5));
 
+      //Verify the first item and check it's clickable in the gridview.
       final akonitem = find.byKey(const Key('0'));
 
       await tester.tap(akonitem);
 
       await tester.pumpAndSettle(const Duration(seconds: 5));
-
+      //Verify the Album list is displayed and click on the below given album track name.
       final albumText = find.text("Freedom");
 
       await tester.tap(albumText);
@@ -74,6 +75,8 @@ void main() {
 
       await tester.pumpAndSettle(const Duration(seconds: 5));
 
+      //Verify that the album can be added into the favourite section
+
       final fav1 = find.byKey(const Key("Freedom"));
 
       await tester.tap(fav1);
@@ -96,11 +99,15 @@ void main() {
 
       await tester.pumpAndSettle(const Duration(seconds: 5));
 
+      // verify that the back button is clickable and navigates to the home screen
+
       final back3 = find.byIcon(Icons.arrow_back);
 
       await tester.tap(back3);
 
       await tester.pumpAndSettle(const Duration(seconds: 5));
+
+      //Verify that the album can be removed from the favourite section
 
       final unFav1 = find.byKey(const Key("Freedom"));
       await tester.tap(unFav1);
